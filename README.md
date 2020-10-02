@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ninjas React Firebase Bootcamp
 
-## Available Scripts
+Creating a simple slack clone using React and Firebase. The Bootcamp videos can be found here on YouTube - [Part1](https://www.youtube.com/watch?v=Lu-EiHiJxLU&ab_channel=CodingNinjasIndia), [Part2](https://www.youtube.com/watch?v=a5eR-nseObE&ab_channel=CodingNinjasIndia).
 
-In the project directory, you can run:
+## Running the project
 
-### `npm start`
+- Clone the project and then start the project.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ```
+  git clone https://github.com/aakash-cr7/react-slack-clone
+  cd react-slack-clone
+  npm i
+  npm start
+  ```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Go to [firebase console](console.firebase.google.com) and create your firebase project and then choose a "Web" app to create which will give you `firebaseConfig` something like this.
 
-### `npm test`
+  ```
+  const firebaseConfig = {
+    apiKey: 'your-key',
+    authDomain: 'your-domain',
+    databaseURL: 'your-db',
+    projectId: 'your-project',
+    storageBucket: 'your-storage',
+    messagingSenderId: 'your-messaging-id',
+    appId: 'your-app-id',
+  };
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+  firebase.initializeApp(firebaseConfig);
+  ```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Add your firebase config to `src/firebase.js`. NOTE: Dont use the current `firebaseConfig` as it wont work as I have invoked permissions for anonymous users.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src
+├── components
+│   ├── App.js
+│   ├── MainContainer.js
+│   ├── Sidebar.js
+│   ├── SignIn.js
+│   ├── Slack.js
+│   └── index.js
+├── firebase.js
+├── index.css
+├── index.js
+└── providers
+    └── UserProvider.js
+```
 
-### `npm run eject`
+## Hosting the project on Firbase
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- For first time users, you have to donwload the `firebase-cli`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```
+    npm run build
+    npm i -g firebase-tools
+    firebase login
+    firebase deploy
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- For second time users (who have already done the above steps).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  ```
+    npm run build
+    firebase deploy
+  ```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+You can read more about firebase cli [here](https://firebase.google.com/docs/cli).
