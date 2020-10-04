@@ -1,14 +1,14 @@
-# Ninjas React Firebase Bootcamp
+# SmartClass
 
-Creating a simple slack clone using React and Firebase. The Bootcamp videos can be found here on YouTube - [Part1](https://www.youtube.com/watch?v=Lu-EiHiJxLU&ab_channel=CodingNinjasIndia), [Part2](https://www.youtube.com/watch?v=a5eR-nseObE&ab_channel=CodingNinjasIndia).
+Creating a simple virtual classromm app using React and Firebase.
 
 ## Running the project
 
 - Clone the project and then start the project.
 
   ```
-  git clone https://github.com/aakash-cr7/react-slack-clone
-  cd react-slack-clone
+  git clone
+  cd project-ivy
   npm i
   npm start
   ```
@@ -41,7 +41,7 @@ src
 │   ├── MainContainer.js
 │   ├── Sidebar.js
 │   ├── SignIn.js
-│   ├── Slack.js
+│   ├── class.js
 │   └── index.js
 ├── firebase.js
 ├── index.css
@@ -67,5 +67,3 @@ src
     npm run build
     firebase deploy
   ```
-
-You can read more about firebase cli [here](https://firebase.google.com/docs/cli).
